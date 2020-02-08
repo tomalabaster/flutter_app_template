@@ -1,16 +1,22 @@
-# flutter_app_template
+# Flutter App Template
 
-A new Flutter project.
+This is a template for Flutter apps with which I like to start projects from. It uses BLoCs and repositories.
 
-## Getting Started
+## Getting started
 
-This project is a starting point for a Flutter application.
+Getting started is easy.
 
-A few resources to get you started if this is your first Flutter project:
+1. Fork this repo (optional)
+2. Rename it to your preference (optional)
+3. Clone it
+4. Inside the root, run `flutter create --org com.yourdomain --project-name your_project_name .` from the command line to create the Android and iOS projects
+5. Open your favourite code editor
+6. Run a find and replace all for `flutter_app_template` to `your_project_name`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## BLoCs
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+There's an abstract class `BaseBloc<Event, State>` which can be extended and has a getter `buildState` to be overridden to return a full current state to make `yield`ing a state easier and cleaner.
+
+## Repositories
+
+There's an abstract class `IRepository<T>` which has some typical repository methods you can use to create a repository for a persistence layer suited to your app.
