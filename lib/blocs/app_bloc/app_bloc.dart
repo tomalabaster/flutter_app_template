@@ -7,12 +7,12 @@ import 'package:flutter_app_template/blocs/base_bloc.dart';
 class AppBloc extends BaseBloc<AppEvent, AppState> {
   @override
   AppState get initialState {
-    return this.buildState;
+    return this.fullState;
   }
 
   @override
   Stream<AppState> mapEventToState(AppEvent event) async* {}
 
   @override
-  AppState get buildState => AppState();
+  AppState get fullState => AppState();
 }

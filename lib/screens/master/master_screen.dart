@@ -19,10 +19,12 @@ class _MasterScreenState extends State<MasterScreen> {
   MasterScreenBloc _bloc;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
 
-    this._bloc = MasterScreenBloc();
+    if (this._bloc == null) {
+      this._bloc = MasterScreenBloc();
+    }
   }
 
   @override

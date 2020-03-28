@@ -9,7 +9,7 @@ class MasterScreenBloc extends BaseBloc<MasterScreenEvent, MasterScreenState> {
   MasterScreenState get initialState {
     this._currentTabIndex = 0;
 
-    return this.buildState;
+    return this.fullState;
   }
 
   @override
@@ -17,11 +17,11 @@ class MasterScreenBloc extends BaseBloc<MasterScreenEvent, MasterScreenState> {
     if (event is MasterScreenEventSwitchTab) {
       this._currentTabIndex = event.tabIndex;
 
-      yield this.buildState;
+      yield this.fullState;
     }
   }
 
   @override
-  MasterScreenState get buildState =>
+  MasterScreenState get fullState =>
       MasterScreenState(currentTabIndex: this._currentTabIndex);
 }

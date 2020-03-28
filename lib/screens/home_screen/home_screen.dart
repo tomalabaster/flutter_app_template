@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_template/screens/state_yielding_example_screen/current_state_updating_screen/current_state_updating_screen.dart';
+import 'package:flutter_app_template/screens/state_yielding_example_screen/full_state_yielding_screen/full_state_yielding_screen.dart';
+import 'package:flutter_app_template/screens/state_yielding_example_screen/partial_state_yielding_screen/partial_state_yielding_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
@@ -43,6 +46,27 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            RaisedButton(
+              child: Text('Full State Yielding'),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) => FullStateYieldingScreen()),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Partial State Yielding'),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) => PartialStateYieldingScreen()),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Current State Yielding'),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) => CurrentStateYieldingScreen()),
+              ),
             ),
           ],
         ),
